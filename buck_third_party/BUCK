@@ -1,0 +1,62 @@
+cxx_library(
+    name='gtest_internal',
+    header_namespace='gtest/internal',
+    exported_headers=glob(['gtest/googletest/include/gtest/internal/*.h'])
+    )
+cxx_library(
+    name='gmock_internal',
+    header_namespace='gmock/internal',
+    exported_headers=glob(['gtest/googlemock/include/gmock/internal/*.h'])
+    )
+
+cxx_library(
+  name = 'gtest',
+  srcs=glob(
+          include = [
+              "gtest/googletest/src/*.cc",
+              # "googletest/src/*.h",
+              # "gtest/googletest/include/gtest/**/*.h",
+              # "gtest/googlemock/src/*.cc",
+              # "googlemock/include/gmock/**/*.h",
+          ],
+          exclude = [
+              "gtest/googletest/src/gtest-all.cc",
+              "gtest/googletest/src/gtest_main.cc",
+              # "gtest/googlemock/src/gmock-all.cc",
+              # "gtest/googlemock/src/gmock_main.cc",
+          ],
+    ),
+    header_namespace = 'gtest',
+    exported_headers = glob([
+      ('gtest/googletest/googletest/include/gtest/*.h'),
+      # ('gtest/googletest/googlemock/include/gmock/*.h'),
+    ]),
+    include_directories= [   
+      ('gtest/googletest/include/'),
+      # ('gtest/googlemock/include/'),
+       'gtest/googletest/']
+    ,
+    headers = glob([
+      ('gtest/googletest/src/*.cc'),
+      ('gtest/googletest/src/*.h'),
+      # ('gtest/googlemock/src/*.cc'),
+      # ('gtest/googlemock/src/*.h'),
+      # ('gtest/googletest/include/gtest/*.h'),
+      # ('gtest/googlemock/include/gmock/*.h'),
+      # ('gtest/googlemock/include/gmock/internal/*.h'),
+      ('gtest/googletest/include/gtest/internal/*.h')
+    ]),
+    platform_linker_flags = [
+    #   ('android', []),
+      # ('', ['-lpthread']),
+    ],
+       visibility = ["PUBLIC"],
+
+    # visibility = [
+    #   '//test/...',
+    # ],
+    deps=[':gtest_internal',':gmock_internal']
+)
+
+
+

@@ -5,3 +5,12 @@ genrule(
     out = "out.txt",
     cmd = "echo BUILT BY BUCK2> $OUT",
 )
+
+
+# buildifier: disable=no-effect
+# cxx_library(
+#     name = "print",
+#     srcs = glob(["**/*.cpp"]),
+#     exported_headers = glob(["**/*.hpp"]),
+#     visibility = ["PUBLIC"],
+# ) if not host_info().os.is_windows else None

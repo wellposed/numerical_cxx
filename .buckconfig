@@ -1,6 +1,6 @@
 [repositories]
 root = .
-buck_plelude=buck_prelude
+buck_prelude=buck_prelude
 prelude = buck_prelude
 toolchains = toolchains
 none = none
