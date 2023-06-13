@@ -1,5 +1,5 @@
 [submodule "third_party/gtest"]
-	path = third_party/gtest
+	path = buck_third_party/gtest
 	url = git@github.com:google/googletest.git
 [submodule "buck_prelude"]
 	path = buck_prelude

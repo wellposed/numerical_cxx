@@ -1,0 +1,17 @@
+builddir
+buck-out
+
+# Xmake cache
+.xmake/
+build/
+
+# MacOS Cache
+.DS_Store
+
+
+# build dir for 
+
+
+#haskell
+dist/
+dist-newstyle/
