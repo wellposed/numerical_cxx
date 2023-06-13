@@ -14,3 +14,6 @@ genrule(
 #     exported_headers = glob(["**/*.hpp"]),
 #     visibility = ["PUBLIC"],
 # ) if not host_info().os.is_windows else None
+
+
+cxx_test(name="stuff", srcs=['testing_example.cpp'],deps=['//buck_third_party:gtest'])
