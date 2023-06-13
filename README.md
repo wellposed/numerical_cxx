@@ -14,17 +14,8 @@ this is a port of ideas I first modeled out in my "numerical haskell" project
 ... have you seen any good options for C++ build systems?
 
 ## how do i build it
-install meson the build tool (and make sure the required deps are visible to 
-your environments pkg-config tool)
-```shell
-> mkdir builds
-> meson setup builds 
-> cd builds 
-> meson compile
-> meson test
-# optional meson install 
-```
-
+currently using buck2, its shocking the one i had the easiest time getting working
+with 3rd party vendored libs.   
 
 # who wrote this
 Carter Schonwald!
