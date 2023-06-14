@@ -16,4 +16,9 @@ genrule(
 # ) if not host_info().os.is_windows else None
 
 
-cxx_test(name="stuff", srcs=['testing_example.cpp'],deps=['//buck_third_party:gtest'])
+cxx_test(
+    name="stuff"
+    , srcs=['testing_example.cpp']
+    )
+  #  ,deps=['//buck_third_party:gtest','//buck_third_party:gtest_internal'
+  #  ,'//buck_third_party:gmock_internal', '//buck_third_party:gmock'])

@@ -1,6 +1,9 @@
 
 
-struct Layout {};
+
+struct Layout<typename Addr= > {
+    virtual 
+};
 
 
 struct RectilinearLayout : Layout {};
