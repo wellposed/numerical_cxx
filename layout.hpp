@@ -1,12 +1,12 @@
+#include<cstdint>
 
 
-
-struct Layout<typename Addr= > {
-    virtual 
+template <typename Addr = uint64_t> struct Layout {
+    virtual Addr first_address(); 
 };
 
 
-struct RectilinearLayout : Layout {};
+template <typename Addr = uint64_t> struct RectilinearLayout : Layout<Addr> {};
 
 
-struct DenseRectilinearLayout : RectilinearLayout {} ;
+template <typename Addr = uint64_t> struct DenseRectilinearLayout : RectilinearLayout {} ;
